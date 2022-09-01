@@ -14,9 +14,13 @@ public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
         _validators = validators;
     }
 
+    //CommandHand lere gitmeden önce kontrol yapacak , middleware gibi yani . 
+
     public Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
                                   RequestHandlerDelegate<TResponse> next)
     {
+
+        //Validasyondan hata almıyorsan bir sonraki requesti devreye sok
         ValidationContext<object> context = new(request);
         List<ValidationFailure> failures = _validators
                                            .Select(validator => validator.Validate(context))

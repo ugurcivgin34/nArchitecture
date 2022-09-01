@@ -2,7 +2,7 @@
 
 public interface IPaginate<T>
 {
-    int From { get; }
+    int From { get; } //Nerden
     int Index { get; }
     int Size { get; }
     int Count { get; }

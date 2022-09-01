@@ -12,10 +12,13 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Brands.Commands.CreateBrand
 {
+    //Buraya bir komut ortaya atılıyor.Mediatr paterni kullanılarak bu commandi kim tüketiyorsa,hangi handler tüketiyorsa onun handler metodunu çalıştırıyor.
     public class CreateBrandCommand : IRequest<CreatedBrandDto>
     {
         public string Name { get; set; }
 
+
+        //Bu requesti gerçekleştirecek commmand i veriyoruz.Sağa da dönüş tipimizi veriyoruz.
         public class CreatedBrandCommandHandler : IRequestHandler<CreateBrandCommand, CreatedBrandDto>
         {
 
