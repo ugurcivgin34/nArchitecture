@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Models.Rules
+namespace Application.Features.Models.Profiles
 {
     public class MappingProfiles : Profile
     {
